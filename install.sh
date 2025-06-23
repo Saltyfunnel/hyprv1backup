@@ -72,7 +72,7 @@ fi
 
 ### Packages to install from AUR via yay
 AUR_PKGS=(
-  wofi swww hyprpicker hyprlock wlogout grimblast hypridle kvantum-theme-catppuccin-git thefuck
+  tofi swww hyprpicker hyprlock wlogout grimblast hypridle kvantum-theme-catppuccin-git thefuck
 )
 
 echo "Installing AUR packages with yay..."
@@ -92,9 +92,9 @@ echo "Copying waybar config..."
 mkdir -p "$USER_HOME/.config/waybar"
 cp -r "$USER_HOME/hyprv1/configs/waybar/"* "$USER_HOME/.config/waybar/"
 
-echo "Copying wofi config..."
-mkdir -p "$USER_HOME/.config/wofi"
-cp -r "$USER_HOME/hyprv1/configs/wofi/"* "$USER_HOME/.config/wofi/"
+echo "Copying tofi config..."
+mkdir -p "$USER_HOME/.config/tofi"
+cp -r "$USER_HOME/hyprv1/configs/tofi/"* "$USER_HOME/.config/tofi/"
 
 echo "Copying hyprlock config..."
 mkdir -p "$USER_HOME/.config/hypr"
@@ -161,9 +161,6 @@ tar -xf "$USER_HOME/hyprv1/assets/themes/Catppuccin-Mocha.tar.xz" -C /usr/share/
 echo "Installing Tela Circle Dracula icon theme..."
 tar -xf "$USER_HOME/hyprv1/assets/icons/Tela-circle-dracula.tar.xz" -C /usr/share/icons/
 
-echo "Installing Bibata cursor theme..."
-tar -xf "$USER_HOME/hyprv1/assets/themes/Bibata-Modern-Ice.tar.xz" -C /usr/share/icons/
-
 echo "Setting up Kvantum Catppuccin theme..."
 # Already installed kvantum-theme-catppuccin-git from AUR above
 
@@ -172,7 +169,6 @@ echo "Setting up Kvantum Catppuccin theme..."
 echo "Applying GTK, icon, and cursor themes for user $SUDO_USER..."
 sudo -u "$SUDO_USER" dbus-launch gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-Mocha'
 sudo -u "$SUDO_USER" dbus-launch gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-dracula'
-sudo -u "$SUDO_USER" dbus-launch gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Ice'
 
 echo "Restarting Thunar for theme to apply..."
 sudo -u "$SUDO_USER" pkill thunar || true
