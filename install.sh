@@ -112,12 +112,6 @@ echo "Copying Kitty config..."
 mkdir -p "$USER_HOME/.config/kitty"
 cp -r "$USER_HOME/hyprv1/configs/kitty/"* "$USER_HOME/.config/kitty/"
 
-### Copy logout menu script
-echo "Copying logout menu script..."
-mkdir -p "$USER_HOME/.config/scripts"
-cp -r "$USER_HOME/hyprv1/configs/scripts/logout-menu.sh" "$USER_HOME/.config/scripts/logout-menu.sh"
-chmod +x "$USER_HOME/.config/scripts/logout-menu.sh"
-
 ### Set up Starship and Fastfetch
 echo "Setting up Starship and Fastfetch..."
 
